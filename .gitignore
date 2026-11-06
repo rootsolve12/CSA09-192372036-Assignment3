@@ -1,0 +1,4 @@
+**/build/
+**/generated/
+*.class
+__pycache__/
