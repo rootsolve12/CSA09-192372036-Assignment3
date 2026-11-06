@@ -1,0 +1,79 @@
+=== TokenCounter (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run1 (exit 0) ===
+Sum of tokens collected: 135 (expected 210)
+
+=== TokenCounter_if_variant_run2 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run3 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run4 (exit 0) ===
+Sum of tokens collected: 60 (expected 210)
+
+=== TokenCounter_if_variant_run5 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run6 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run7 (exit 0) ===
+Sum of tokens collected: 185 (expected 210)
+
+=== TokenCounter_if_variant_run8 (exit 0) ===
+Sum of tokens collected: 135 (expected 210)
+
+=== TokenCounter_if_variant_run9 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== TokenCounter_if_variant_run10 (exit 0) ===
+Sum of tokens collected: 210 (expected 210)
+
+=== CoordinationExperiments (exit 0) ===
+DEADLOCK DETECTED: 2 threads
+"Deadlock0" daemon prio=5 Id=20 BLOCKED on CoordinationExperiments$Wallet@568db2f2 owned by "Deadlock1" Id=21
+	at app//CoordinationExperiments.lambda$deadlock$0(CoordinationExperiments.java:19)
+	-  blocked on CoordinationExperiments$Wallet@568db2f2
+	-  locked CoordinationExperiments$Wallet@58372a00
+	at app//CoordinationExperiments$$Lambda/0x00007f6ab0000c18.run(Unknown Source)
+	at java.base@21.0.13/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base@21.0.13/java.lang.Thread.run(Thread.java:1583)
+
+
+"Deadlock1" daemon prio=5 Id=21 BLOCKED on CoordinationExperiments$Wallet@58372a00 owned by "Deadlock0" Id=20
+	at app//CoordinationExperiments.lambda$deadlock$0(CoordinationExperiments.java:19)
+	-  blocked on CoordinationExperiments$Wallet@58372a00
+	-  locked CoordinationExperiments$Wallet@568db2f2
+	at app//CoordinationExperiments$$Lambda/0x00007f6ab0000c18.run(Unknown Source)
+	at java.base@21.0.13/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base@21.0.13/java.lang.Thread.run(Thread.java:1583)
+
+
+ORDERED transfers=4000,total_balance=2000
+TRY_LOCK skipped=235,total_balance=2000
+COUNTER notifyAll=true,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+COUNTER notifyAll=false,complete=true,sum=5050,events=200
+NOTIFY_ONLY observed_stalls=0/10; a successful run does not prove liveness
+IF_GUARD trial=1,size=-1 (invalid)
+IF_GUARD trial=2,size=-1 (invalid)
+IF_GUARD trial=3,size=-1 (invalid)
+IF_GUARD trial=4,size=-1 (invalid)
+IF_GUARD trial=5,size=-1 (invalid)
+IF_GUARD trial=6,size=-1 (invalid)
+IF_GUARD trial=7,size=-1 (invalid)
+IF_GUARD trial=8,size=-1 (invalid)
+IF_GUARD trial=9,size=-1 (invalid)
+IF_GUARD trial=10,size=-1 (invalid)
+PASS: deadlock detected, ordering prevents it, token bounds hold, if guards fail, BlockingQueue sum=210
+

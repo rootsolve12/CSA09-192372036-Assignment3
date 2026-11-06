@@ -1,0 +1,16 @@
+TokenCounter: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run1: Sum of tokens collected: 135 (expected 210)
+TokenCounter_if_variant_run2: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run3: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run4: Sum of tokens collected: 60 (expected 210)
+TokenCounter_if_variant_run5: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run6: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run7: Sum of tokens collected: 185 (expected 210)
+TokenCounter_if_variant_run8: Sum of tokens collected: 135 (expected 210)
+TokenCounter_if_variant_run9: Sum of tokens collected: 210 (expected 210)
+TokenCounter_if_variant_run10: Sum of tokens collected: 210 (expected 210)
+DEADLOCK DETECTED: 2 threads
+ORDERED transfers=4000,total_balance=2000
+TRY_LOCK skipped=235,total_balance=2000
+NOTIFY_ONLY observed_stalls=0/10; a successful run does not prove liveness
+PASS: deadlock detected, ordering prevents it, token bounds hold, if guards fail, BlockingQueue sum=210

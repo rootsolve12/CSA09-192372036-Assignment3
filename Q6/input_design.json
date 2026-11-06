@@ -1,0 +1,5 @@
+{
+  "task": "Q6",
+  "input": "In-source deterministic scenarios plus inputs/ fixtures where applicable",
+  "details": "See source main method and README for scenarios, repeated trials and workload sizes"
+}
