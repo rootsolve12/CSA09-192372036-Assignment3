@@ -1,0 +1,3 @@
+HAND_CHECK total=5,success=2,failure=3
+RECOMMEND_FOR_THIS_RUN pool=8; based on lowest five-run mean, not a universal optimum
+PASS: all pools complete 10000 files; 9700 successes and 300 isolated failures; hand set verified

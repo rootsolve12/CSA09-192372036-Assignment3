@@ -1,0 +1,1 @@
+{"requested_files":10000,"missing_rule":"index % 100 == 0","corrupt_rule":"index % 100 == 1","out_of_range_rule":"index % 100 == 2","valid_score":"index % 101","expected_success":9700,"expected_failure":300,"pool_sizes":[1,2,4,8],"warmups_per_pool":1,"measured_runs_per_pool":5}
