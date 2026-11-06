@@ -1,0 +1,36 @@
+=== StorageDemo (exit 0) ===
+Saved answer01.pdf
+Error: Could not store answer02.pdf
+Cause: Disk quota exceeded
+
+=== ExamPortal (exit 0) ===
+STUDENT MESSAGE: Exam window closed
+STUDENT MESSAGE: Student not registered
+STUDENT MESSAGE: Answer exceeds 500 KiB limit
+STUDENT MESSAGE: Submission could not be stored
+getCause(): NoSuchFileException
+ExamPortal$SubmissionStorageException: Submission could not be stored
+	at ExamPortal.storage(ExamPortal.java:23)
+	at ExamPortal.service(ExamPortal.java:29)
+	at ExamPortal.controller(ExamPortal.java:34)
+	at ExamPortal.main(ExamPortal.java:50)
+Caused by: java.nio.file.NoSuchFileException: inputs/missing.txt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3281)
+	at ExamPortal.storage(ExamPortal.java:22)
+	... 3 more
+CASE 0: ACCEPTED
+CASE 1: WindowClosed
+CASE 2: NotRegistered
+CASE 3: FileTooLarge
+CASE 4: SubmissionStorageException
+Unchecked metadata bug rejected
+Cause lost on rethrow: null
+Unchanged Cause print would throw NullPointerException
+PASS: portal rules, layered propagation and cause preservation
+
