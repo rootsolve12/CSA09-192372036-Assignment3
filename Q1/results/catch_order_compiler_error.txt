@@ -1,0 +1,4 @@
+/workspace/scratch/fa9930c13bab/assignment3/Q1/build/invalid/CatchOrder.java:6: error: exception FileNotFoundException has already been caught
+        catch (FileNotFoundException e) { System.out.println("narrow"); }
+        ^
+1 error

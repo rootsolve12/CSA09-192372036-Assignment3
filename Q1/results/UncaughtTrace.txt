@@ -1,0 +1,7 @@
+Exception in thread "main" java.lang.NumberFormatException: For input string: "not-an-account"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at UncaughtTrace.parseAccount(UncaughtTrace.java:2)
+	at UncaughtTrace.service(UncaughtTrace.java:3)
+	at UncaughtTrace.main(UncaughtTrace.java:4)

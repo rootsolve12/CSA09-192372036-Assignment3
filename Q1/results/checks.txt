@@ -1,0 +1,4 @@
+ATM paths=8; finally markers=8
+PASS: eight failure/success paths; finally runs for every attempt
+UncaughtTrace exited nonzero with NumberFormatException (expected)
+Broad-before-narrow catch rejected by Java compiler (expected)

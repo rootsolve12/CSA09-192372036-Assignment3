@@ -1,0 +1,8 @@
+import java.io.*;
+class CatchOrder {
+    public static void main(String[] args) {
+        try { new FileReader("missing.txt").close(); }
+        catch (IOException e) { System.out.println("broad"); }
+        catch (FileNotFoundException e) { System.out.println("narrow"); }
+    }
+}

@@ -1,0 +1,25 @@
+CASE valid
+FINALLY: withdrawal attempt finished
+SUCCESS: dispensed 200.0
+CASE letters_account
+FINALLY: withdrawal attempt finished
+INPUT_CATCH: NumberFormatException
+CASE letters_amount
+FINALLY: withdrawal attempt finished
+INPUT_CATCH: InputMismatchException
+CASE negative
+FINALLY: withdrawal attempt finished
+VALIDATION_CATCH: Positive account and finite amount required
+CASE over_balance
+FINALLY: withdrawal attempt finished
+FUNDS_CATCH: Balance is 1000.00
+CASE missing_card
+FINALLY: withdrawal attempt finished
+IO_CATCH: NoSuchFileException
+CASE wrong_card
+FINALLY: withdrawal attempt finished
+SECURITY_CATCH: Card does not match account
+CASE not_finite
+FINALLY: withdrawal attempt finished
+VALIDATION_CATCH: Positive account and finite amount required
+PASS: eight failure/success paths; finally runs for every attempt

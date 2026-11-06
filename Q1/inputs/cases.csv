@@ -1,0 +1,9 @@
+case,input
+valid,192372036 200
+letters_account,abc 200
+letters_amount,192372036 abc
+negative,192372036 -1
+over_balance,192372036 1001
+missing_card,192372036 20
+wrong_card,999 20
+not_finite,192372036 NaN
