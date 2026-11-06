@@ -1,0 +1,22 @@
+SeatBooking_before_run1: Seats sold: 10
+SeatBooking_before_run2: Seats sold: 10
+SeatBooking_before_run3: Seats sold: 10
+SeatBooking_before_run4: Seats sold: 10
+SeatBooking_before_run5: Seats sold: 10
+SeatBooking_before_run6: Seats sold: 10
+SeatBooking_before_run7: Seats sold: 10
+SeatBooking_before_run8: Seats sold: 10
+SeatBooking_before_run9: Seats sold: 10
+SeatBooking_before_run10: Seats sold: 10
+SeatBooking_after_run1: Seats sold: 10
+SeatBooking_after_run2: Seats sold: 10
+SeatBooking_after_run3: Seats sold: 10
+SeatBooking_after_run4: Seats sold: 10
+SeatBooking_after_run5: Seats sold: 10
+SeatBooking_after_run6: Seats sold: 10
+SeatBooking_after_run7: Seats sold: 10
+SeatBooking_after_run8: Seats sold: 10
+SeatBooking_after_run9: Seats sold: 10
+SeatBooking_after_run10: Seats sold: 10
+PASS: forced race reproduced ten times; synchronized/atomic/lock/map variants retain 1000 unique sales
+Forced race: 10/10 trials sold 20 claims for 10 unique seats
