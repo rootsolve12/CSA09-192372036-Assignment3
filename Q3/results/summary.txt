@@ -1,0 +1,2 @@
+storeA.txt:60
+storeB.txt:90

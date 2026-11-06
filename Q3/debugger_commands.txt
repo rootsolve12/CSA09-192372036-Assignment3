@@ -1,0 +1,10 @@
+stop at ResourceSafety:44
+run
+cont
+locals
+print ResourceSafety.open
+where
+next
+print ResourceSafety.open
+list
+cont

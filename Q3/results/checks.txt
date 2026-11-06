@@ -1,0 +1,9 @@
+REPORT MATCH: storeA.txt:60|storeB.txt:90|
+FAILURE manual_bad: Bad sales row in inputs/storeBad.txt; open_readers=1
+FAILURE manual_fixed: Bad sales row in inputs/storeBad.txt; open_readers=0
+FAILURE twr: Bad sales row in inputs/storeBad.txt; open_readers=0
+PRIMARY: processing failed
+SUPPRESSED: close B
+SUPPRESSED: close A
+PASS: identical reports; leaks bad=1 fixed=0 twr=0; previous summary preserved
+Real jdb breakpoint and next trace: line 44 -> line 52; open readers=1

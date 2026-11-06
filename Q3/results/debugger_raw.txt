@@ -1,0 +1,76 @@
+Script started on 2026-11-06 20:15:38+05:30 [COMMAND="java -m jdk.jdi/com.sun.tools.example.debug.tty.TTY -sourcepath . -classpath build/main/ResourceSafety ResourceSafety" TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Initializing jdb ...
+> stop at ResourceSafety:44
+run
+Deferring breakpoint ResourceSafety:44.
+It will be set after the class is loaded.
+> run ResourceSafety
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint ResourceSafety:44
+READ manual_fixed inputs/storeA.txt
+READ manual_fixed inputs/storeB.txt
+READ twr inputs/storeA.txt
+READ twr inputs/storeB.txt
+REPORT MATCH: storeA.txt:60|storeB.txt:90|
+READ manual_bad inputs/storeA.txt
+
+Breakpoint hit: "thread=main", ResourceSafety.generate(), line=44 bci=293
+44                                int total=read(reader,file); // debugger leak checkpoint
+
+main[1] cont
+> READ manual_bad inputs/storeBad.txt
+
+Breakpoint hit: "thread=main", ResourceSafety.generate(), line=44 bci=293
+44                                int total=read(reader,file); // debugger leak checkpoint
+
+main[1] locals
+print ResourceSafety.open
+where
+next
+Method arguments:
+inputs = instance of java.util.ImmutableCollections$List12(id=681)
+mode = "manual_bad"
+target = instance of sun.nio.fs.UnixPath(id=683)
+Local variables:
+temporary = instance of sun.nio.fs.UnixPath(id=684)
+writer = instance of java.io.BufferedWriter(id=685)
+file = instance of sun.nio.fs.UnixPath(id=686)
+reader = instance of ResourceSafety$TrackedReader(id=687)
+main[1]   [1] ResourceSafety.generate (ResourceSafety.java:44)
+  [2] ResourceSafety.main (ResourceSafety.java:71)
+main[1] > 
+Step completed: "thread=main", ResourceSafety.generate(), line=52 bci=405
+52                    } finally { if (writer != null) writer.close(); }
+
+main[1]  ResourceSafety.open = 1
+main[1] print ResourceSafety.open
+list
+cont
+48                                try { writer.write(file.getFileName()+":"+read(reader,file)); writer.newLine(); }
+49                                finally { reader.close(); }
+50                            }
+51                        }
+52 =>                 } finally { if (writer != null) writer.close(); }
+53                }
+54                Files.move(temporary,target,StandardCopyOption.REPLACE_EXISTING);
+55                return Files.readString(target);
+56            } catch (IOException e) { Files.deleteIfExists(temporary); throw e; }
+57        }
+ ResourceSafety.open = 1
+main[1] > main[1] FAILURE manual_bad: Bad sales row in inputs/storeBad.txt; open_readers=1
+READ manual_fixed inputs/storeA.txt
+READ manual_fixed inputs/storeBad.txt
+FAILURE manual_fixed: Bad sales row in inputs/storeBad.txt; open_readers=0
+READ twr inputs/storeA.txt
+READ twr inputs/storeBad.txt
+FAILURE twr: Bad sales row in inputs/storeBad.txt; open_readers=0
+PRIMARY: processing failed
+SUPPRESSED: close B
+SUPPRESSED: close A
+PASS: identical reports; leaks bad=1 fixed=0 twr=0; previous summary preserved
+
+The application exited
+
+Script done on 2026-11-06 20:16:09+05:30 [COMMAND_EXIT_CODE="0"]

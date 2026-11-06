@@ -1,0 +1,18 @@
+READ manual_fixed inputs/storeA.txt
+READ manual_fixed inputs/storeB.txt
+READ twr inputs/storeA.txt
+READ twr inputs/storeB.txt
+REPORT MATCH: storeA.txt:60|storeB.txt:90|
+READ manual_bad inputs/storeA.txt
+READ manual_bad inputs/storeBad.txt
+FAILURE manual_bad: Bad sales row in inputs/storeBad.txt; open_readers=1
+READ manual_fixed inputs/storeA.txt
+READ manual_fixed inputs/storeBad.txt
+FAILURE manual_fixed: Bad sales row in inputs/storeBad.txt; open_readers=0
+READ twr inputs/storeA.txt
+READ twr inputs/storeBad.txt
+FAILURE twr: Bad sales row in inputs/storeBad.txt; open_readers=0
+PRIMARY: processing failed
+SUPPRESSED: close B
+SUPPRESSED: close A
+PASS: identical reports; leaks bad=1 fixed=0 twr=0; previous summary preserved
