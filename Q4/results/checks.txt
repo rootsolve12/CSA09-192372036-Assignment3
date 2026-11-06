@@ -1,0 +1,9 @@
+DIRECT_RUN: [direct@main]; thread state=NEW; alive=false
+STATE before start=NEW
+STATE after start=TIMED_WAITING; alive=true
+STATE after join=TERMINATED; alive=false
+EXECUTOR total=100
+PASS: 30 ordering trials, run/start distinction, lifecycle and executor totals
+Station completion orders recorded: 10 Thread + 10 Runnable + 10 priority trials
+DaemonDemo_true: WORKER_STARTED daemon=true | MAIN_END without join
+DaemonDemo_false: WORKER_STARTED daemon=false | MAIN_END without join | WORK_DONE

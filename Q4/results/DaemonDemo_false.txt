@@ -1,0 +1,3 @@
+WORKER_STARTED daemon=false
+MAIN_END without join
+WORK_DONE
